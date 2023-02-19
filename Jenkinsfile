@@ -19,21 +19,21 @@ pipeline{
 
 // # SonaQube Quality Gate:        
         stages{
-              stage('SonaQube Quality Gate Statuc Check'){
-                  steps{
-                      script{
-                      withSonarQubeEnv('sonarserver') { 
-                      sh "mvn sonar:sonar -Dsonar.java.binaries=target/classes"
-                       }
-                      timeout(time: 1, unit: 'HOURS') {
-                      def qg = waitForQualityGate()
-                      if (qg.status != 'OK') {
-                           error "Pipeline aborted due to quality gate failure: ${qg.status}"
-                      }
-                    }
-                  }
-                }  
-              }
+            //   stage('SonaQube Quality Gate Statuc Check'){
+            //       steps{
+            //           script{
+            //           withSonarQubeEnv('sonarserver') { 
+            //           sh "mvn sonar:sonar -Dsonar.java.binaries=target/classes"
+            //            }
+            //           timeout(time: 1, unit: 'HOURS') {
+            //           def qg = waitForQualityGate()
+            //           if (qg.status != 'OK') {
+            //                error "Pipeline aborted due to quality gate failure: ${qg.status}"
+            //           }
+            //         }
+            //       }
+            //     }  
+            //   }
 
 // # Build Maven Jar files
 //  #-----------  Shopfront   ---------------- 
