@@ -40,7 +40,7 @@ pipeline{
               stage('Build Shopfront Maven App'){
               steps{
                   script{
-		   sh "mvn clean install  -f shopfront/pom.xml"
+		   sh "mvn clean install"
                        }
                     }
                  }
